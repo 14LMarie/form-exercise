@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 
 <head>
     <meta charset="UTF-8">
@@ -9,11 +9,35 @@
 
 <body>
     <form>
-
-    </form>
+    <label for="country">Country</label>
+    <select name="country" ng-model="data.country" ng-options="country.name for country in countries track by country.code"></select><br>
+    
+    <label for="happy">Happy Meter</label>
+    <input type="range" ng-model="data.happy" name="happy"><br>
+   
+   <label for="snack">Favorite Snack</label>
+   <input type="text" name="snack" ng-model="data.snack" placeholder="Enter a snack"><br>
+   
+   How do you Travel:<br>
+   <label for="walk">Walk</label>
+   <input type="radio" name="transportation" ng-model="data.transporation" value="walk"><br>
+   
+    <label for="drive">Drive</label>
+   <input type="radio" name="transportation" ng-model="data.transporation" value="drive"><br>
+   
+    <label for="bike">Bike</label>
+   <input type="radio" name="transportation" ng-model="data.transporation" value="bike"><br>
+   
+   <label for="dream">Recent Dream</label>
+   <textarea name="dream" ng-model="data.dream"></textarea><br>
+   </form>
     <div>
         <h1>Results</h1>
-
+        <p>Country: {{data.country}}</p>
+        <p>Happy Metter: {{data.happy}}</p>
+        <p>Favorite Snakc: {{data.snack}}</p>
+        <p>Travel: {{data.transporation}}</p>
+        <p>Dream: {{data.dream}}</p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js" type="text/javascript"></script>
     <script src="js/myApp.js"></script>
